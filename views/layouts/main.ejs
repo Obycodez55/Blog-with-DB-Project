@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <meta name = "description" content="<%= description %>">
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/f3dceb1f0b.js" crossorigin="anonymous"></script>
+
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+    
+</head>
+<body>
+    <%- include('../partials/search.ejs') %>
+    <div class="container">
+        <%- include('../partials/header.ejs') %>
+        <main class="main">
+
+        <%- body %>
+
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" defer src="/js/script.js"></script>
+</body>
+</html>
