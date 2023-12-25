@@ -50,37 +50,37 @@ router.post("/admin", async (req, res) => {
 });
 
 
-// /**
-//  * POST /
-//  * Admin --Register
-//  */
+/**
+ * POST /
+ * Admin --Register
+ */
 
-// router.post("/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   
-//   try {
+  try {
     
-//     const {username, password} = req.body;
-//     const hashedPassword = await bcrypt.hash(password, 10)
+    const {username, password} = req.body;
+    const hashedPassword = await bcrypt.hash(password, 10)
     
-//     try {
-//       const user = await User.create({username, password:hashedPassword});
-//       res.status(201).json({message: "User created successfully", user})
+    try {
+      const user = await User.create({username, password:hashedPassword});
+      res.status(201).json({message: "User created successfully", user})
 
 
-//     } catch (error) {
-//       if (error.code === 11000){
-//         res.status(409).json({message: "User Already in use"});
-//       }
-//       res.status(500).json({message: "Internal server error"});
-//     }
+    } catch (error) {
+      if (error.code === 11000){
+        res.status(409).json({message: "User Already in use"});
+      }
+      res.status(500).json({message: "Internal server error"});
+    }
 
 
    
-//   } catch (error) {
-//     console.log(error);
-//   }
+  } catch (error) {
+    console.log(error);
+  }
 
-// });
+});
 
 module.exports = router;
 
