@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
 
-
+const adminLayout = "../"
 /**
  * GET /
- * Admin -- Login
+ * Admin -- Login Page
  */
 
 router.get("/admin", async (req, res) => {
