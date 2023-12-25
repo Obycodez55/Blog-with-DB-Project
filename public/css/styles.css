@@ -301,6 +301,12 @@ img {
 
 
 /* Admin Pages */
+.admin-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .admin-posts{
   padding: 0;
   margin: 0;

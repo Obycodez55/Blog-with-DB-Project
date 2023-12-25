@@ -17,7 +17,7 @@ connectDB();
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
-// app.use(cookieParser);
+app.use(cookieParser());
 
 app.use(session({
     secret: "keyboard cat",
@@ -25,7 +25,8 @@ app.use(session({
     saveUninitialized: true,
     store: MongoStore.create({
         mongoUrl: process.env.MONGODB_URI
-    })
+    }),
+    cookie: { maxAge: new Date ( Date.now() + (3600000) ) }
 }));
 
 app.use(express.static("public"));
