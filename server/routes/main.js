@@ -43,13 +43,29 @@ router.get("/", async (req, res) => {
  */
 
 router.get("/about", (req, res) => {
-  const local = {
+  const locals = {
     title: "NodeJs Blog | About",
     description:
       "Learn about the Simple Blog made with NodeJs, Express, EJS and MongoDB"
   };
-  res.render("about", {local, currentRoute: "/about"});
+  res.render("about", {locals, currentRoute: "/about"});
 });
+
+/**
+ * GET /
+ * CONTACT
+ */
+router.get("/contact", (req, res) => {
+  const locals = {
+    title: "NodeJs Blog | Contact",
+    description:
+      "Learn about the Simple Blog made with NodeJs, Express, EJS and MongoDB"
+  };
+  res.render("contact", {locals, currentRoute: "/contact"});
+});
+
+
+
 
 /**
  * GET /
