@@ -29,7 +29,8 @@ router.get("/", async (req, res) => {
       locals,
       data,
       current: page,
-      nextPage: hasNextPage ? nextPage : null
+      nextPage: hasNextPage ? nextPage : null,
+      currentRoute: "/"
     });
   } catch (error) {
     console.log(error);
@@ -47,7 +48,7 @@ router.get("/about", (req, res) => {
     description:
       "Learn about the Simple Blog made with NodeJs, Express, EJS and MongoDB"
   };
-  res.render("about", local);
+  res.render("about", {local, currentRoute: "/about"});
 });
 
 /**
@@ -63,9 +64,10 @@ router.get("/post/:id", async (req, res) => {
     const locals = {
       title: data.title,
       description: "Simple Blog made with NodeJs, Express, EJS and MongoDB"
+
     };
 
-    res.render("post", { locals, data });
+    res.render("post", { locals, data, currentRoute: `/post/${slug}` });
   } catch (error) {
     console.log(error);
   }
