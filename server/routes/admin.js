@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
+const User = require("../models/User");
 
-const adminLayout = "../"
+const adminLayout = "../views/layouts/admin";
 /**
  * GET /
  * Admin -- Login Page
@@ -18,7 +19,7 @@ router.get("/admin", async (req, res) => {
     
 
     const data = await Post.find();
-    res.render('admin/index', { locals});
+    res.render('admin/index', { locals, layout: adminLayout });
   } catch (error) {
     console.log(error);
   }
